@@ -1,0 +1,51 @@
+body {
+    background-image: url("../images/Fuji-Background.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-bottom: 5px solid #ffffff;
+}
+
+#question-box{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 120px;
+    background-image: url("../images/Japan-Pattern-Transparent.png");
+    border: 5px solid cornflowerblue;
+}
+
+#title-card {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 40px;
+        text-align: center;
+        background-image: url("../images/Japan-Pattern-Transparent.png");
+        border: 5px solid cornflowerblue;
+}
+
+#q-card {
+    margin: 40px;
+    width: 40em;
+    border: 5px solid cornflowerblue;
+}
+
+#card-img {
+    border-bottom: 5px solid cornflowerblue !important;
+}
+
+#Q-buttons {
+    align: center;
+}
+
+#score-btn {
+    margin-left: auto;
+    margin-right: auto;
+    /* height: 80px !important;
+    width: 240px !important; */
+}

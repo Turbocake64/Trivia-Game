@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-    <script src="assets/javascript/apps.js"></script>
   </head>
   <body>
 
@@ -16,10 +15,37 @@
                 </button> 
         </nav>
 
-        <div class="container" id="title-card">
+        <div class="container center-card" id="title-card">
             <h1>Welcome to The Japan Trivia Game!</h1>
         </div>
-        <div class="container" id="question-box">
+
+        <div class="container center-card" id="intro-box">
+            <div class="row">
+                <div class="col-md-12">
+                <h2>You will have 30 seconds to answer 10 questions about Japan. 
+                    The topics range from language and culture to geograpy. 
+                    Each question is multiple choice, so it won't be too hard. Have fun with it! 
+                    <br>When you are ready, press the button below to start.
+                </h2>
+                <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-danger btn-lg btn-block" id="start-btn">START!</button>    
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+
+        <div class="container center-card" id="timer-box">
+            <h1>Time Left</h1>
+            <h1 id="timer-display"></h1>
+        </div>
+        <div class="container center-card" id="question-box">
             <div class="row">
                 <div class="col-md-12 text-center" id="intro-title">
                     <h1>はい〜スタート！！!</h1>
@@ -27,9 +53,9 @@
             </div>
             <!-- </div> -->
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 col-xs-0">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 col-xs-12">
                     <div class="card" id="q-card">
                         <img src="assets/images/Question-1.jpg" class="card-img-top" id="card-img" alt="...">
                         <div class="card-body">
@@ -37,16 +63,16 @@
                             <p class="card-text text-center">Which of these is <strong>not</strong> a Japanese art?</p>
                             <div class="justify-right" id="Q-buttons">
                                 <div class="row">
-                                    <div class="col-md-3"><button class="btn btn-danger btn-block" id="q1 q1-r">Fung Shui</button></div>
-                                    <div class="col-md-3"><button class="btn btn-danger btn-block" id="q1 q1-w">Origami</button></div>
-                                    <div class="col-md-3"><button class="btn btn-danger btn-block" id="q1 q1-w">Taiko Drums</button></div>
-                                    <div class="col-md-3"><button class="btn btn-danger btn-block" id="q1 q1-w">Bonsai Trees</button></div>
+                                    <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q1" id="right">Fung Shui</button></div>
+                                    <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q1" id="wrong">Origami</button></div>
+                                    <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q1" id="wrong">Taiko Drums</button></div>
+                                    <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q1" id="wrong">Bonsai Trees</button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-xs-0">
                 </div>
             </div>
             <!-- </div> -->
@@ -60,10 +86,10 @@
                             <h5 class="card-title">Question 第２!</h5>
                             <p class="card-text text-center">Japan is roughly the size of which US state?</p>
                             <div class="row">
-                                <div class="col-md-3"><button class="btn btn-danger btn-block" id="q2 q2-w">Vermont</button></div>
-                                <div class="col-md-3"><button class="btn btn-danger btn-block" id="q2 q2-r">California</button></div>
-                                <div class="col-md-3"><button class="btn btn-danger btn-block" id="q2 q2-w">Texas</button></div>
-                                <div class="col-md-3"><button class="btn btn-danger btn-block" id="q2 q2-w">Tennessee</button></div>
+                                <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q2" id="wrong">Vermont</button></div>
+                                <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q2" id="right">California</button></div>
+                                <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q2" id="wrong">Texas</button></div>
+                                <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q2" id="wrong">Tennessee</button></div>
                             </div>
                         </div>
                     </div>
@@ -82,10 +108,10 @@
                             <h5 class="card-title">Question 第３!</h5>
                                 <p class="card-text">How many prefectures are there in Japan?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q3 q3-r">Fourty-Seven</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q3 q3-w">Fourty-Eight</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q3 q3-w">Fourty-Nine</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q3 q3-w">Fifty</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q3" id="right">Fourty-Seven</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q3" id="wrong">Fourty-Eight</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q3" id="wrong">Fourty-Nine</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q3" id="wrong">Fifty</button></div>
                                     </div>
                             </div>
                         </div>
@@ -104,10 +130,10 @@
                             <h5 class="card-title">Question 第４!</h5>
                                 <p class="card-text text-center">How many writings systems does Japanese use?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q4 q4-w">One</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q4 q4-w">Two</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q4 q4-r">Three</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q4 q4-w">Four</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q4" id="wrong">One</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q4" id="wrong">Two</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q4" id="right">Three</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q4" id="wrong">Four</button></div>
                                     </div>
                         </div>
                     </div>
@@ -126,10 +152,10 @@
                                 <h5 class="card-title">Question 第５!</h5>
                                 <p class="card-text text-center">What is the old name for Tokyo?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q5 q5-w">Osaka</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q5 q5-w">Kyoto</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q5 q5-w">Meiji</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q5 q5-r">Edo</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q5" id="wrong">Osaka</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q5" id="wrong">Kyoto</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q5" id="wrong">Meiji</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q5" id="right">Edo</button></div>
                                     </div>
                             </div>
                         </div>
@@ -148,10 +174,10 @@
                                 <h5 class="card-title">Question 第６!</h5>
                                 <p class="card-text text-center">Which of these is <strong>not</strong> one of Japan's main islands?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q6" id="q6-w">Shikoku</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q6" id="q6-r">Okinawa</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q6" id="q6-w">Hokkaido</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q6" id="q6-w">Honshu</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q6" id="wrong">Shikoku</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q6" id="right">Okinawa</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q6" id="wrong">Hokkaido</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q6" id="wrong">Honshu</button></div>
                                     </div>
                             </div>
                         </div>
@@ -170,10 +196,10 @@
                                 <h5 class="card-title">Question 第７!</h5>
                                 <p class="card-text text-center">When did Japan last host the olympics?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q7" id="q7-w">1964</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q7" id="q7-w">1984</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q7" id="q7-r">1998</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block q7" id="q7-w">2018</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q7" id="wrong">1964</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q7" id="wrong">1984</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q7" id="right">1998</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q7" id="wrong">2018</button></div>
                                     </div>
                             </div>
                         </div>
@@ -192,10 +218,10 @@
                                 <h5 class="card-title">Question 第８!</h5>
                                 <p class="card-text text-center">What is the population of Japan?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q8 q8-a1">127 Million</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q8 q8-a2">97 Million</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q8 q8-a3">327 Million</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q8 q8-a4">57 Million</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q8" id="right">127 Million</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q8" id="wrong">97 Million</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q8" id="wrong">327 Million</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q8" id="wrong">57 Million</button></div>
                                     </div>
                             </div>
                         </div>
@@ -214,10 +240,10 @@
                                 <h5 class="card-title">Question 第９!</h5>
                                 <p class="card-text text-center">In Japan, Valentine's Day is specifically for women to give men chocolate. When do men return the favor?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q9 q9-a1">Children's Day</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q9 q9-a2">Couple's Day</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q9 q9-a3">White Day</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q9 q9-a4">They Don't</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q9" id="wrong">Children's Day</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q9" id="wrong">Couple's Day</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q9" id="right">White Day</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q9" id="wrong">They Don't</button></div>
                                     </div>
                             </div>
                         </div>
@@ -236,10 +262,10 @@
                                 <h5 class="card-title">Question 第１０!</h5>
                                 <p class="card-text text-center">In Japan, what products have their best sales days on Christmas Eve?</p>
                                 <div class="row">
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q10 q10-a1">Rice & Miso</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q10 q10-a2">Beer & Ramen</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q10 q10-a3">Condoms & KFC</button></div>
-                                        <div class="col-md-3"><button class="btn btn-danger btn-block" id="q10 q10-a4">Sake and Sushi</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qqbtn 10" id="wrong">Rice & Miso</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q10" id="wrong">Beer & Ramen</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q10" id="right">Condoms & KFC</button></div>
+                                        <div class="col-md-3"><button class="btn btn-danger btn-block qbtn q10" id="wrong">Sake and Sushi</button></div>
                                     </div> 
                             </div>
                         </div>
@@ -258,11 +284,47 @@
             </div>
         </div>
     </div>
+
+    <div class="container" id="answer-box">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 center-card">
+                <div class="row">
+                    <div class="col-md-12">
+                    <h1 id="score-display"></h1>
+                    <button class="btn btn-danger btn-lg" id="reset-btn">Play Again?</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="timeout-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title">We're out of time.</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h2>press the button below to get your results</h2>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-danger" id="score-btn-modal">Shall we?</button>
+                </div>
+            </div>
+        </div>
+    </div>
       
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -20,18 +20,45 @@ body {
     border: 5px solid cornflowerblue;
 }
 
-#title-card {
+.center-card {
         margin-top: 40px;
         margin-bottom: 40px;
-        padding: 40px;
+        padding-top: 40px;
         text-align: center;
         background-image: url("../images/Japan-Pattern-Transparent.png");
         border: 5px solid cornflowerblue;
 }
 
+.center-card#timer-box {
+    position: fixed;
+    display: block;
+    left: 60px;
+    top: 40px;
+    width: 20%;
+    height: 25%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    z-index: 3;
+    background-image: url("../images/Japan-Pattern.jpg");
+    border: 5px solid cornflowerblue;
+}
+
+.center-card#answer-box {
+    margin-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
+    background-image: url("../images/Japan-Pattern-Transparent.png");
+    border: 5px solid cornflowerblue;
+}
+
+#start-btn {
+    margin-bottom: 40px;
+}
+
 #q-card {
     margin: 40px;
-    width: 40em;
+    width: 100%;
     border: 5px solid cornflowerblue;
 }
 
@@ -39,13 +66,7 @@ body {
     border-bottom: 5px solid cornflowerblue !important;
 }
 
-#Q-buttons {
-    align: center;
-}
-
 #score-btn {
     margin-left: auto;
     margin-right: auto;
-    /* height: 80px !important;
-    width: 240px !important; */
 }

@@ -77,6 +77,7 @@ $("#reset-btn").on("click", function() {
     $("#answer-box").hide();
     $("#timer-box").show();
     $("button").attr('disabled', false);
+    counter = 59
     setInterval(function() {
         counter--;
         if (counter > 9) {
@@ -92,7 +93,7 @@ $("#reset-btn").on("click", function() {
             clearInterval(counter);
         }
     
-      }, 1000);
+      }, 0);
     buttonReset1 = $(".btn-success");
     buttonReset2 = $(".btn-dark");
     // if($("button").attr("class") === "btn-dark" || $("button").attr("class") === "btn-success") {

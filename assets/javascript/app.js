@@ -2,10 +2,32 @@ var correctAnswers = 0;
 var intervalId;
 var timerRunning = false;
 var counter = 59;
+var counterInterval;
 
-// triviaTimer = setTimeout(function() {
-//     $('#timeout-modal').modal("show");
-//   }, 30000);
+function startGame() {
+    console.log("Start Button Clicked!");
+    $("#question-box").show();
+    $("#timer-box").show();
+    $("#intro-box").hide();
+    counterInterval = setInterval(function() {
+        counter--;
+        if (counter > 9) {
+            span = document.getElementById("timer-display");
+            span.innerHTML = "00:" + counter;
+        }
+        if (counter >= 0 && counter < 10) {
+            span = document.getElementById("timer-display");
+            span.innerHTML = "00:0" + counter;
+        }
+
+        if (counter === 0) {
+            $('#timeout-modal').modal("show");
+            clearInterval(counterInterval);
+        }
+    
+      }, 1000);
+
+    }
 
 $(document).ready(function(){
 
@@ -46,59 +68,14 @@ $("#timer-box").hide();
 
 
 $("#start-btn").on("click", function() {
-    console.log("Start Button Clicked!");
-    $("#question-box").show();
-    $("#timer-box").show();
-    $("#intro-box").hide();
-    setInterval(function() {
-        counter--;
-        if (counter > 9) {
-            span = document.getElementById("timer-display");
-            span.innerHTML = "00:" + counter;
-        }
-        if (counter >= 0 && counter < 10) {
-            span = document.getElementById("timer-display");
-            span.innerHTML = "00:0" + counter;
-        }
-
-        if (counter === 0) {
-            $('#timeout-modal').modal("show");
-            clearInterval(counter);
-        }
-    
-      }, 1000);
-    
+    startGame();
 });
 
 $("#reset-btn").on("click", function() {
     correctAnswers = 0;
-    //This doesn't work even though it is calling to a function it should have in scope?
-    $("#question-box").show();
+    counter = 59;
     $("#answer-box").hide();
-    $("#timer-box").show();
-    $("button").attr('disabled', false);
-    counter = 59
-    setInterval(function() {
-        counter--;
-        if (counter > 9) {
-            span = document.getElementById("timer-display");
-            span.innerHTML = "00:" + counter;
-        }
-        if (counter >= 0 && counter < 10) {
-            span = document.getElementById("timer-display");
-            span.innerHTML = "00:0" + counter;
-        }
-        if (counter === 0) {
-            $('#timeout-modal').modal("show");
-            clearInterval(counter);
-        }
-    
-      }, 0);
-    buttonReset1 = $(".btn-success");
-    buttonReset2 = $(".btn-dark");
-    // if($("button").attr("class") === "btn-dark" || $("button").attr("class") === "btn-success") {
-    // }
-    $( "#score-display" ).empty();
+    startGame();
 });
 
 $("#score-btn").on("click", function() {

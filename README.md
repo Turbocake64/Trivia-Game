@@ -28,5 +28,6 @@ Micah Rabinowitz
 
 ## Links
 
-GitHub: https://github.com/Turbocake64/Trivia-Game
-Deployed: https://turbocake64.github.io/Trivia-Game/
+ - GitHub: https://github.com/Turbocake64/Trivia-Game
+
+ - Deployed: https://turbocake64.github.io/Trivia-Game/

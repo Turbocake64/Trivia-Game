@@ -20,7 +20,7 @@ function startGame() {
             span.innerHTML = "00:0" + counter;
         }
 
-        if (counter === 0) {
+        if (counter === 0 && $('#answer-box').is(':hidden')) {
             $('#timeout-modal').modal("show");
             clearInterval(counterInterval);
         }
@@ -35,60 +35,26 @@ $("#question-box").hide();
 $("#answer-box").hide();
 $("#timer-box").hide();
 
-// function countdown() {
-
-//     time--;
-  
-//     var converted = timeConverter(time);
-//     console.log(converted);
-  
-//     $("#trivia-display").text(converted);
-//   }
-
-// function timeConverter(t) {
-
-//     var minutes = Math.floor(t / 60);
-//     var seconds = t - (minutes * 60);
-  
-//     if (seconds < 10) {
-//       seconds = "0" + seconds;
-//     }
-  
-//     if (minutes === 0) {
-//       minutes = "00";
-//     }
-//     else if (minutes < 10) {
-//       minutes = "0" + minutes;
-//     }
-  
-//     return minutes + ":" + seconds;
-//   }
-
-// converted = timeConverter(time);
-
-
 $("#start-btn").on("click", function() {
     startGame();
 });
 
 $("#reset-btn").on("click", function() {
-    correctAnswers = 0;
-    counter = 59;
-    $("#answer-box").hide();
-    startGame();
+    location.reload();
 });
 
 $("#score-btn").on("click", function() {
     clearInterval(counter);
     $("#timer-box").hide();
-    console.log("Answers Requesteds!");
-    console.log("Player received a score of " + correctAnswers + "/10.");
+    $("#title-text").empty();
+    $("#title-text").append("Thank you for playing the Japan Trivia Game!")
     $("#intro-box").hide();
     $("#question-box").hide();
     $("#answer-box").show();
+    $("#score-display").empty();
     $("#score-display").append("You got a score of:<br><br>" + correctAnswers + "/10!");
     if(correctAnswers <= 3) {
-        $("#score-display").append("<br><br> The important thing is that you tried. Let's try agin.");
+        $("#score-display").append("<br><br> The important thing is that you tried. Let's try again.");
     };
     if(correctAnswers > 3 && correctAnswers <= 7) {
         $("#score-display").append("<br><br> This is average. <br>You are average.");
